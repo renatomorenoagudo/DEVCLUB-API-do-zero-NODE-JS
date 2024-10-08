@@ -6,8 +6,8 @@ app.use(express.json())
 const users =[]
 
 app.post('/usuarios',(req, res)=>{
-    console.log(req)
-    users.push()
+    //console.log(req.body)
+    users.push(req.body)
     res.send('ok post')
 })
 
@@ -23,7 +23,8 @@ Rotas:
 2-endereço=www.loja...
 */
 app.get('/usuarios', (req, res)=>{
-    res.send('ok, deu bom')
+    //res.send('ok, deu bom')
+    res.json(users)
 })
 
 //porta:
