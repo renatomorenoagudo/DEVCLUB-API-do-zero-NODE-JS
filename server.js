@@ -8,7 +8,8 @@ const users =[]
 app.post('/usuarios',(req, res)=>{
     //console.log(req.body)
     users.push(req.body)
-    res.send('ok post')
+    //res.send('ok post')
+    res.status(201).json(req.body)
 })
 
 /*HTTP Métodos:
@@ -24,7 +25,7 @@ Rotas:
 */
 app.get('/usuarios', (req, res)=>{
     //res.send('ok, deu bom')
-    res.json(users)
+    res.status(200).json(users)
 })
 
 //porta:
@@ -39,4 +40,13 @@ app.listen(3000)
  */
 //para servidor reiniciar sozinho qdo tiver alteração:
 //node --watch server.js
+
+//mongoDB:  renatomorenoagudo2
+//014RxiOIbBewLl1U
+
+//sit:prisma.io
+//terminal: npm install prisma --save-dev
+//terminal: npx prisma db push
+//terminal: npx prisma studio
+
 
