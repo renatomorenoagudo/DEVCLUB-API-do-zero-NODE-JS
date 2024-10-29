@@ -6,7 +6,6 @@ const prisma = new PrismaClient()
 const app = express()
 app.use(express.json())
 
-const users =[]
 
 app.post('/usuarios', async(req, res)=>{
     //console.log(req.body)
@@ -33,8 +32,9 @@ Rotas:
 1-tipo/metodo http
 2-endereço=www.loja...
 */
-app.get('/usuarios', (req, res)=>{
+app.get('/usuarios', async (req, res)=>{
     //res.send('ok, deu bom')
+    const users = await prisma.user.findMany()
     res.status(200).json(users)
 })
 
